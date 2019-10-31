@@ -10,7 +10,7 @@ String[] letters = {"A","B","C","D","E", "F", "G", "H", "I", "J","K", "L", "M","
                      "U","V", "W", "X", "Y", "Z ", "-"};
 
 
-PFont myFont, myBigFont;
+PFont skriftType, skriftTypeSTOR;
 final int myHeight = 400;
 final int myWidth = 400;
 int frameNum = 0;
@@ -30,8 +30,8 @@ void setup() {
   smooth();
   background(255);
   
-  myFont = createFont("Arial", 14);
-  myBigFont = createFont("Arial", 80);
+  skriftType = createFont("Arial", 16);
+  skriftTypeSTOR = createFont("Arial", 60);
 }
 
 void draw() {
@@ -61,14 +61,14 @@ void showMessage(int i) {
 //Skriver information på skærmen
 void drawText() {
     stroke(0);
-    textFont(myFont);
+    textFont(skriftType);
     textAlign(LEFT, TOP); 
     fill(currentTextHue, 255, 255);
 
     text("Receives 1 classifier output message from wekinator", 10, 10);
     text("Listening for OSC message /wek/outputs, port 11500", 10, 30);
     
-    textFont(myBigFont);
+    textFont(skriftTypeSTOR);
     text(currentMessage, 190, 180);
 }
 
